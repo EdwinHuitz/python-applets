@@ -3,20 +3,22 @@ from tkinter import *
 import covid_scrape as covids
 # declares UI display window
 window = Tk()
-scroll = Scrollbar(window)
-# creates a label with text, background and foreground colors, height, and width
-stats = Label(
-   text=f'COVID-19 World-Wide Stats\n\n{covids.find_stats()}',
-   bg='black',fg='red',
-   height=100,width=100)
-# creates a user input module
-entry = Entry()
-# creates a button with text
-clicker = Button(text="wow")
-# appends the greeting label to the UI
+cStats = str(covids.find_stats()).split('|')
+print(len(cStats))
+frame = Frame(master=window)
+stats = Label(master=window,text=f'COVID-19 World-Wide Stats\n\n{cStats[0]}')
 stats.pack()
-scroll.pack(side = RIGHT,fill = Y)
-entry.pack()
-clicker.pack()
+frame.pack()
+a=0
+b=1
+while a < len(cStats):
+   r=0
+   while r < 5:
+      block = Label(master=frame,text=cStats[b])
+      block.grid(row=a,column=r)
+      r+=1
+      if b< len(cStats)-1:
+         b+=1
+   a+=1
 # initializes the window instance
 window.mainloop()
