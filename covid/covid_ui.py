@@ -4,7 +4,6 @@ import covid_scrape as covids
 # declares UI display window
 window = Tk()
 cStats = str(covids.find_stats()).split('|')
-print(len(cStats))
 frame = Frame(master=window)
 stats = Label(master=window,text=f'COVID-19 World-Wide Stats\n\n{cStats[0]}')
 stats.pack()
@@ -16,13 +15,9 @@ while a < len(cStats)/6:
    while r < 5:
       block = Button(frame,text=cStats[b])
       block.grid(row=a,column=r)
-      tstb = Button(text='1',command=lambda a=f'test{b}':getText(a))
-      tstb.pack()
       r+=1
       if b< len(cStats)-1:
          b+=1
    a+=1
 # initializes the window instance
-def getText(ix):
-   print(ix)
 window.mainloop()
