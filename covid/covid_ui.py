@@ -11,14 +11,18 @@ stats.pack()
 frame.pack()
 a=0
 b=1
-while a < len(cStats):
+while a < len(cStats)/6:
    r=0
    while r < 5:
-      block = Label(master=frame,text=cStats[b])
+      block = Button(frame,text=cStats[b])
       block.grid(row=a,column=r)
+      tstb = Button(text='1',command=lambda a=f'test{b}':getText(a))
+      tstb.pack()
       r+=1
       if b< len(cStats)-1:
          b+=1
    a+=1
 # initializes the window instance
+def getText(ix):
+   print(ix)
 window.mainloop()
