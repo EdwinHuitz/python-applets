@@ -3,6 +3,7 @@ from tkinter import *
 
 
 window = Tk()
+window.title('Calculator')
 label = Label(text='0')
 fr0,fr1,fr2,fr3,frL,frR = Frame(window),Frame(window),Frame(window),Frame(window),Frame(window),Frame(window)
 label.pack()
@@ -12,25 +13,22 @@ fr3.pack()
 fr2.pack()
 fr1.pack()
 fr0.pack()
-bottombtn = [Button(fr0, text='C',command=lambda a='C':doit(a)),Button(fr0,text='0',command=lambda a='0':doit(a)),Button(fr0,text='.',command=lambda a='.':doit(a))]
-sidebtn = [Button(frL, text='+',command=lambda a='+':doit(a)),Button(frL,text='-',command=lambda a='-':doit(a)),Button(frL,text='=',command=lambda a='=':doit(a)),Button(frR, text='*',command=lambda a='*':doit(a)),Button(frR,text='/',command=lambda a='/':doit(a)),Button(frR,text='%',command=lambda a='%':doit(a))]
 inp,inp1,op = '','',''
+bottombtn = [Button(fr0, text='C',command=lambda a='C':doit(a)),Button(fr0,text='0',command=lambda a='0':doit(a)),Button(fr0,text='.',command=lambda a='.':doit(a))]
+sidebtn = [Button(frL, text='+',command=lambda a='+':doit(a)),Button(frL,text='-',command=lambda a='-':doit(a)),Button(frL,text='=',command=lambda a='=':doit(a)),Button(frR, text='*',command=lambda a='*':doit(a)),Button(frR,text='/',command=lambda a='/':doit(a)),Button(frR,text='+/-',command=lambda a='':negpos(a))]
 def doit(num):
    global inp,inp1,op
    #clear
    if num == 'C':
       inp,inp1,op='','',''
-      print(num+' and '+inp+' and '+inp1+' and '+op)
       label.configure(text='0')
    #decimal
    elif num == '.' and inp=='':
       inp+='0.'
-      print(num+' and '+inp)
       label.configure(text=inp)
    elif num == '.':
       if inp.find('.')<0:
          inp+='.'
-         print(num+' and '+inp)
          label.configure(text=inp)
    #add
    elif num == '+':
@@ -91,8 +89,13 @@ def doit(num):
          inp1=''
    elif num.isnumeric():
       inp+=num
-      print(num+' and '+inp)
       label.configure(text=inp1+op+inp)
+def negpos(a):
+   global inp
+   if inp == '':
+      inp='0'
+   inp = str(float(inp)*-1)
+   label.configure(text=inp1+op+inp)
 
 i=0
 tr=0
