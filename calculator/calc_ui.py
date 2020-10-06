@@ -14,8 +14,8 @@ fr2.pack()
 fr1.pack()
 fr0.pack()
 inp,inp1,op = '','',''
-bottombtn = [Button(fr0, text='C',command=lambda a='C':doit(a)),Button(fr0,text='0',command=lambda a='0':doit(a)),Button(fr0,text='.',command=lambda a='.':doit(a))]
-sidebtn = [Button(frL, text='+',command=lambda a='+':doit(a)),Button(frL,text='-',command=lambda a='-':doit(a)),Button(frL,text='=',command=lambda a='=':doit(a)),Button(frR, text='*',command=lambda a='*':doit(a)),Button(frR,text='/',command=lambda a='/':doit(a)),Button(frR,text='+/-',command=lambda a='':negpos(a))]
+bottombtn = [Button(fr0, text='C',command=lambda a='C':doit('C')),Button(fr0,text='0',command=lambda a='0':doit('0')),Button(fr0,text='.',command=lambda:doit('.'))]
+sidebtn = [Button(frL, text='+',command=lambda:doit('+')),Button(frL,text='-',command=lambda:doit('-')),Button(frL,text='=',command=lambda:doit('=')),Button(frR, text='*',command=lambda:doit('*')),Button(frR,text='/',command=lambda:doit('/')),Button(frR,text='+/-',command=lambda:negpos(''))]
 def doit(num):
    global inp,inp1,op
    #clear
