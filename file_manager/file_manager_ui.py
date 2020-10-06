@@ -5,20 +5,31 @@ import file_manager as fm
 window = Tk()
 window.geometry('410x300')
 window.title('File Manager')
+
 lbl = Label(text='Use this program to manage your files all in one place!')
 frL = Frame(window)
 frR = Frame(window)
+
 lbl.pack()
 frL.pack(side=LEFT,padx=5,pady=10)
 frR.pack(side=RIGHT,padx=5,pady=10)
 
 txt = ['Create a New','Rename an Existing','Move an Existing','Delete an Existing']
 txt1 = [' File',' Directory']
+
 def f1():
    def getFile():
-      inpD.insert(0,of())
+      x=of()
+      inpD.configure(state=NORMAL)
+      inpD.delete(0,'end')
+      inpD.insert(0,x)
       addfile.lift()
-
+      inpD.configure(state=DISABLED)
+   def checkl():
+      if len(inpD.get())>0 and len(inpF.get())>2:
+         fm.files.createIt(f'{inpD.get()}/{inpF.get()}')
+         addfile.destroy()
+      else:print(FALSE)
    addfile=Toplevel()
    addfile.geometry('500x200')
    of= askdirectory
@@ -26,10 +37,10 @@ def f1():
    lbI= Label(addfile,text='Use the form below to create a new file\n\n1st) First select the desired directory for which you want this file to be created in\n2nd) Choose your new file\'s name, which must include it\'s file extention.\nExample: file.txt')
    lbD= Label(addfile,text='New File\'s Directory:')
    lbF= Label(addfile,text='New File\'s Name:')
-   inpD= Entry(addfile,width=50)
+   inpD= Entry(addfile,width=50,state=DISABLED)
    inpF= Entry(addfile,width=30)
    getD= Button(addfile,text='Browse',command=lambda:getFile())
-   submit=Button(addfile,text='Submit',command=lambda:print(f'{inpD.value}{inpF.value}'))
+   submit=Button(addfile,text='Submit',command=lambda:checkl())#print(f'{inpD.get()}/{inpF.get()}'))
    lbI.grid(row=0,column=0,columnspan=4)
    lbD.grid(row=1,column=0)
    lbF.grid(row=2,column=0,sticky='e')
