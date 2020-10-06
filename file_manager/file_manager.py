@@ -2,7 +2,8 @@ from shutil import *
 import os
 
 def checkIt(x):
-   if os.path.exists(str(x)):return(True)
+   inputN=str(x).replace('//','/')
+   if os.path.exists(inputN):return(True)
    else:return(False)
 
 class files():
@@ -54,8 +55,8 @@ class folders():
          os.rmdir(str(self))
          return(True)
       else:return(False)
-      
-#print(folders.deleteIt('a'))
+
+#print(checkIt('a/b/c'))
 
 #creates a file
 #r=read,a=append,w=write,x=create. Add + to the end to enable reading and writing permissions
