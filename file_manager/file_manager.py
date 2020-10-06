@@ -5,6 +5,7 @@ def checkIt(x):
    inputN=str(x).replace('//','/')
    if os.path.exists(inputN):return(True)
    else:return(False)
+   return(True)
 
 class files():
    def createIt(self):
@@ -15,7 +16,9 @@ class files():
 
    def renameIt(self,newN):
       if checkIt(self)==True:
-         os.rename(str(self),str(newN))
+         num=self.rfind('/')
+         newName=self[0:num+1]+newN
+         os.rename(str(self),str(newName))
          return(True)
       else:return(False)
 
@@ -40,7 +43,9 @@ class folders():
 
    def renameIt(self,newN):
       if checkIt(self)==True:
-         os.rename(str(self),str(newN))
+         num=self.rfind('/')
+         newName=self[0:num+1]+newN
+         os.rename(str(self),str(newName))
          return(True)
       else:return(False)
 
@@ -56,7 +61,7 @@ class folders():
          return(True)
       else:return(False)
 
-#print(checkIt('a/b/c'))
+#print(files.renameIt('a/b/test/c/test','123'))
 
 #creates a file
 #r=read,a=append,w=write,x=create. Add + to the end to enable reading and writing permissions
