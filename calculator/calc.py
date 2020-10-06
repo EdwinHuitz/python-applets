@@ -27,4 +27,5 @@ def math(i1,sym,i2):
       ans=multiplying(one,two)
    elif sym == '/':
       ans=dividing(one,two)
+
    return ans

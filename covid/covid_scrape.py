@@ -15,7 +15,7 @@ def find_stats():
       death,ndeath = f'  total deaths:{details[9].text}',f'  new deaths:{details[11].text}'
       recover,cases = f'  total recoveries:{details[13].text}',f'  active cases:{details[15].text}'
       population = f'  population:{details[29].text}'
-      covidinfo += f'\n{rank}|{country}|\n{population}\n{total}\n{ntotal}\n{death}\n{ndeath}\n{recover}\n{cases}\n|'
+      covidinfo += f'{rank}|{country}|\n{population}\n{total}\n{ntotal}\n{death}\n{ndeath}\n{recover}\n{cases}\n|'
       i+=1
    return covidinfo
 #print(find_stats())
