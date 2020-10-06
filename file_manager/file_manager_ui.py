@@ -49,7 +49,6 @@ def addF():
    getD.grid(row=1,column=3)
    submit.grid(row=2,column=2,sticky='w')
 
-
 def renameF():
    def getFile():
       x=of()
@@ -82,7 +81,47 @@ def renameF():
    getD.grid(row=1,column=3)
    submit.grid(row=2,column=2,sticky='w')
 
-def moveF():print('3')
+def moveF():
+   def getFile():
+      x=of()
+      inpD.configure(state=NORMAL)
+      inpD.delete(0,'end')
+      inpD.insert(0,x)
+      addfile.lift()
+      inpD.configure(state=DISABLED)
+   def getFolder():
+      y=nf()
+      inpF.configure(state=NORMAL)
+      inpF.delete(0,'end')
+      inpF.insert(0,y)
+      addfile.lift()
+      inpF.configure(state=DISABLED)
+   def checkLen():
+      if len(inpD.get())>0 and len(inpF.get())>2:
+         fm.files.moveIt(f'{inpD.get()}',f'{inpF.get()}')
+         addfile.destroy()
+      else:print(FALSE)
+   addfile=Toplevel()
+   addfile.geometry('500x250')
+   of= askopenfilename
+   nf= askdirectory
+   addfile.title(f'{txt[1]}{txt1[0]}')
+   lblI= Label(addfile,text='Use the form below to move a file\n\n1st) First select the desired file for which you want to move\n\n2nd) Choose your file\'s new location\nExample: folder/new_spot\n\n')
+   lblD= Label(addfile,text='File\'s Old Directory:')
+   lblF= Label(addfile,text='File\'s New Directory:')
+   inpD= Entry(addfile,width=50,state=DISABLED)
+   inpF= Entry(addfile,width=50,state=DISABLED)
+   getD= Button(addfile,text='Browse',command=lambda:getFile())
+   getN= Button(addfile,text='Browse',command=lambda:getFolder())
+   submit=Button(addfile,text='Submit',command=lambda:checkLen())
+   lblI.grid(row=0,column=0,columnspan=4)
+   lblD.grid(row=1,column=0)
+   lblF.grid(row=2,column=0)
+   inpD.grid(row=1,column=1,columnspan=2,pady=5,padx=5,sticky='w')
+   inpF.grid(row=2,column=1,columnspan=2,pady=5,padx=5,sticky='w')
+   getD.grid(row=1,column=3)
+   getN.grid(row=2,column=3)
+   submit.grid(row=3,column=2,sticky='w')
 
 def deleteF():
    def getFile():
@@ -176,7 +215,48 @@ def renameD():
    getD.grid(row=1,column=3)
    submit.grid(row=2,column=2,sticky='w')
 
-def moveD():print('3')
+def moveD():
+   def getFile():
+      x=of()
+      inpD.configure(state=NORMAL)
+      inpD.delete(0,'end')
+      inpD.insert(0,x)
+      addfile.lift()
+      inpD.configure(state=DISABLED)
+   def getFolder():
+      y=nf()
+      inpF.configure(state=NORMAL)
+      inpF.delete(0,'end')
+      inpF.insert(0,y)
+      addfile.lift()
+      inpF.configure(state=DISABLED)
+   def checkLen():
+      if len(inpD.get())>0 and len(inpF.get())>2:
+         fm.folders.moveIt(f'{inpD.get()}',f'{inpF.get()}')
+         addfile.destroy()
+      else:print(FALSE)
+   addfile=Toplevel()
+   addfile.geometry('500x250')
+   of= askdirectory
+   nf= askdirectory
+   addfile.title(f'{txt[1]}{txt1[1]}')
+   lblI= Label(addfile,text='Use the form below to move a folder\n\n1st) First select the desired folder for which you want to move\n\n2nd) Choose your folder\'s new location\nExample: folder/new_spot\n\n')
+   lblD= Label(addfile,text='Desired Folder:')
+   lblF= Label(addfile,text='Folder\'s New Directory:')
+   inpD= Entry(addfile,width=50,state=DISABLED)
+   inpF= Entry(addfile,width=50,state=DISABLED)
+   getD= Button(addfile,text='Browse',command=lambda:getFile())
+   getN= Button(addfile,text='Browse',command=lambda:getFolder())
+   submit=Button(addfile,text='Submit',command=lambda:checkLen())
+   lblI.grid(row=0,column=0,columnspan=4)
+   lblD.grid(row=1,column=0)
+   lblF.grid(row=2,column=0)
+   inpD.grid(row=1,column=1,columnspan=2,pady=5,padx=5,sticky='w')
+   inpF.grid(row=2,column=1,columnspan=2,pady=5,padx=5,sticky='w')
+   getD.grid(row=1,column=3)
+   getN.grid(row=2,column=3)
+   submit.grid(row=3,column=2,sticky='w')
+   
 def deleteD():
    def getFile():
       x=of()
