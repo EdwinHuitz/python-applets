@@ -164,5 +164,5 @@ Project Link: [https://github.com/EdwinHuitz/python-applets](https://github.com/
 [issues-shield]: https://img.shields.io/github/issues/EdwinHuitz/repo.svg?style=flat-square
 [issues-url]: https://github.com/EdwinHuitz/python-applets/issues
 [license-shield]: https://img.shields.io/github/license/EdwinHuitz/repo.svg?style=flat-square
-[license-url]: https://github.com/EdwinHuitz/python-applets/blob/master/LICENSE.txt
+[license-url]: https://github.com/EdwinHuitz/python-applets/blob/main/LICENSE.txt
 [product-screenshot]: images/screenshot.png
