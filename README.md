@@ -1,7 +1,9 @@
 <!-- PROJECT SHIELDS -->
+[![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+![twitter]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -159,10 +161,18 @@ Project Link: [https://github.com/EdwinHuitz/python-applets](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-round&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/edwin-huitz/
-[issues-shield]: https://img.shields.io/github/issues/EdwinHuitz/repo.svg?style=flat-square
+
+[issues-shield]: https://img.shields.io/github/issues/EdwinHuitz/python-applets
 [issues-url]: https://github.com/EdwinHuitz/python-applets/issues
-[license-shield]: https://img.shields.io/github/license/EdwinHuitz/repo.svg?style=flat-square
+
+[license-shield]: https://img.shields.io/github/license/EdwinHuitz/python-applets
 [license-url]: https://github.com/EdwinHuitz/python-applets/blob/main/LICENSE.txt
+
+[forks-shield]:https://img.shields.io/github/forks/EdwinHuitz/python-applets
+[forks-url]:https://github.com/EdwinHuitz/python-applets/forks
+
+[twitter]:https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FEdwinHuitz
+
 [product-screenshot]: images/screenshot.png
