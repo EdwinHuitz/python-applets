@@ -3,7 +3,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-![twitter]
+[![Twitter][twitter-shield]][twitter-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -173,6 +173,7 @@ Project Link: [https://github.com/EdwinHuitz/python-applets](https://github.com/
 [forks-shield]:https://img.shields.io/github/forks/EdwinHuitz/python-applets
 [forks-url]:https://github.com/EdwinHuitz/python-applets/forks
 
-[twitter]:https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FEdwinHuitz
+[twitter-shield]:https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FEdwinHuitz
+[twitter-url]:https://twitter.com/EdwinHuitz
 
 [product-screenshot]: images/screenshot.png
