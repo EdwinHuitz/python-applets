@@ -16,6 +16,10 @@ b=4
 chart={'cat':[],'val':[]}
 window = Tk()
 cStats = str(covids.find_stats()).split('|')
+statL = []
+for cs in cStats:
+   ans = cs.replace('\n','\n\n')
+   statL.append(ans)
 top,center,bottom = Frame(master=window,bg='black'),Frame(master=window,bg='black'),Frame(master=window,bg='black')
 curChart = FigureCanvasTkAgg(plt.Figure(figsize=(1,1)))
 curChart.get_tk_widget().pack(side=RIGHT)
@@ -46,11 +50,12 @@ def info(x):
    bars = FigureCanvasTkAgg(fig,top)
    ax = fig.add_subplot(111,facecolor='black')
    num=int(x)
+   
    if num == 2:
-      wrld = cStats[2].replace(' population:\n','\n')
+      wrld = statL[2].replace(' population:\n','')
       stats.configure(text=f'World-Wide {wrld}')
    else:
-      stats.configure(text=f'{cStats[num-1]}{cStats[num]}')
+      stats.configure(text=f'{cStats[num-1]}{statL[num]}')
    sorting(num)
    #building graph
    df = DataFrame(chart,columns=['cat','val'])
@@ -68,11 +73,11 @@ def info(x):
 window.iconbitmap('images/covid.ico')
 window.title('COVID-19 World-Wide Statistics')
 window.configure(bg='black')
-stats = Label(master=top,bg='black',fg='white')
+stats = Label(master=top,bg='black',fg='white',font=50)
 stats.pack(side='right')
 info(2)
 Button(center,text=f'{cStats[0]}{cStats[1]}',width=14,height=2,command=lambda a=f'{2}':info(2)).pack()
-Label(master=center,text='Top Ten Countries Affected by COVID-19',bg='black',fg='white').pack(side=TOP)
+Label(master=center,text='Top Ten Countries Affected by COVID-19',bg='black',fg='white',font=50).pack(side=TOP)
 top.pack()
 center.pack()
 bottom.pack(padx=10,pady=10)
