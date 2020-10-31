@@ -40,11 +40,11 @@ def test_seven(p1,ans):
 
 @pytest.mark.parametrize('p1,ans',[('a',''),('abc','b'),('123456789','2345678')])
 def test_eight(p1,ans):
-   assert reverseUpcaseString(p1) == ans
+   assert removeEnds(p1) == ans
 
 @pytest.mark.parametrize('p1,ans',[('hello',{ 'h': 1, 'e': 1, 'l': 2, 'o': 1 }),('Today is fantastic!',{ 'T': 1, 'o': 1, 'd': 1, 'a': 3, 'y': 1, ' ': 2, 'i': 2, 's': 2, 'f': 1, 'n': 1, 't': 2, 'c': 1, '!': 1 })])
 def test_nine(p1,ans):
-   assert reverseUpcaseString(p1) == ans
+   assert charCount(p1) == ans
 
 @pytest.mark.parametrize('p1,p2,p3,ans',[(1234,'*',3,'1234'),(123,'0',5,'00123'),(42,'*',10,'********42')])
 def test_ten(p1,p2,p3,ans):
