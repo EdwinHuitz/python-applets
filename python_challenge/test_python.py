@@ -42,12 +42,12 @@ def test_seven(p1,ans):
 def test_eight(p1,ans):
    assert reverseUpcaseString(p1) == ans
 
-@pytest.mark.parametrize('p1,ans',[('hello',{ h: 1, e: 1, l: 2, o: 1 }),('Today is fantastic!',{ T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 })])
+@pytest.mark.parametrize('p1,ans',[('hello',{ 'h': 1, 'e': 1, 'l': 2, 'o': 1 }),('Today is fantastic!',{ 'T': 1, 'o': 1, 'd': 1, 'a': 3, 'y': 1, ' ': 2, 'i': 2, 's': 2, 'f': 1, 'n': 1, 't': 2, 'c': 1, '!': 1 })])
 def test_nine(p1,ans):
    assert reverseUpcaseString(p1) == ans
 
-@pytest.mark.parametrize('p1,p2,p3,ans',[(1234,'*',3,'1234'),(123,'0',5,'00123'),(42,'*',10)])
-def test_ten(p1,ans):
+@pytest.mark.parametrize('p1,p2,p3,ans',[(1234,'*',3,'1234'),(123,'0',5,'00123'),(42,'*',10,'********42')])
+def test_ten(p1,p2,p3,ans):
    assert formatWithPadding(p1,p2,p3) == ans
 
 @pytest.mark.parametrize('p1,ans',[('',True),('A',True),('abc',False),('A nut for a jar of tuna',True)])
@@ -55,5 +55,13 @@ def test_eleven(p1,ans):
    assert isPalindrome(p1) == ans
 
 @pytest.mark.parametrize('p1,p2,ans',[('abc','abc',0),('a1c','a2c',1),('!!!!','****',4)])
-def test_twelve(p1,ans):
+def test_twelve(p1,p2,ans):
    assert hammingDistance(p1,p2) == ans
+
+@pytest.mark.parametrize('p1,ans',[('X','X'),('abc','a-bb-ccc'),('121','1-22-111'),('!A 2','!-AA-   -2222')])
+def test_thirteen(p1,ans):
+   assert mumble(p1) == ans
+
+@pytest.mark.parametrize('p1,ans',[([['a', 1],['b', 2],['c', 3]],{'a': 1, 'b': 2, 'c': 3}),([["name", "Sam"], ["age", 24], ["name", "Sally"]],{ 'name': "Sally", 'age': 24 }),([["i", "like"], ["to", "eat"], ["banana", "chips"]],{ 'i': "like", 'to': "eat", "banana": "chips" })])
+def test_fourteen(p1,ans):
+   assert fromPairs(p1) == ans
