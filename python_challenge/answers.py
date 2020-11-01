@@ -50,8 +50,7 @@ def removeEnds(x):
 def charCount(x):
    ans={}
    for i in x:
-      n=0
-      ans[i]=0
+      n,ans[i]=0,0
       while n < len(x):
          if i == x[n]:
             ans[i]+=1
@@ -120,3 +119,17 @@ def findHighestPriced(x):
       if i['price'] == vals[0]:
          break
    return i
+#17
+def mapArray(x,y):
+   ans,n=[],0
+   for i in x:
+      ans.append(y(i,n))
+      n+=1
+   return ans
+#18
+def reduceArray(x,y,z):
+   t,n=z,0
+   for i in x:
+      t=y(t,i,n)
+      n+=1
+   return t
