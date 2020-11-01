@@ -56,7 +56,7 @@ def charCount(x):
          if i == x[n]:
             ans[i]+=1
          n+=1
-   return ansgit 
+   return ans
 #10
 def formatWithPadding(x,y,z):
    diff,i,ans = z-len(str(x)),0,''
@@ -100,3 +100,23 @@ def fromPairs(x):
    for i in x:
       ans[i[0]]=i[1]
    return ans
+#15
+def mergeObjects(*args):
+   ans={}
+   for dic in args:
+      for key in dic:
+         ans[key]=dic[key]
+   if len(ans) == 1:
+      return {}
+   return ans
+#16
+def findHighestPriced(x):
+   vals,n=[],0
+   while n<len(x):
+      vals.append(x[n]['price'])
+      n+=1
+   vals.sort(reverse=True)
+   for i in x:
+      if i['price'] == vals[0]:
+         break
+   return i

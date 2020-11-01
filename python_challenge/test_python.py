@@ -65,3 +65,11 @@ def test_thirteen(p1,ans):
 @pytest.mark.parametrize('p1,ans',[([['a', 1],['b', 2],['c', 3]],{'a': 1, 'b': 2, 'c': 3}),([["name", "Sam"], ["age", 24], ["name", "Sally"]],{ 'name': "Sally", 'age': 24 }),([["i", "like"], ["to", "eat"], ["banana", "chips"]],{ 'i': "like", 'to': "eat", "banana": "chips" })])
 def test_fourteen(p1,ans):
    assert fromPairs(p1) == ans
+
+@pytest.mark.parametrize('p1,p2,p3,ans',[({},{},{'a':1},{}),({'a':1,'b':2,'c':3},{'d':4},{},{'a':1,'b':2,'c':3,'d':4}),({'a':1,'b':2,'c':3},{'d':4},{'b':22,'d':44},{'a':1,'b':22,'c':3,'d':44})])
+def test_fifteen(p1,p2,p3,ans):
+   assert mergeObjects(p1,p2,p3) == ans
+
+@pytest.mark.parametrize('p1,ans',[([{'sku':'a1','price':25},{'sku':'b2','price':5},{'sku':'c3','price':50},{'sku':'d4','price':10}],{ 'sku': 'c3', 'price': 50 }),([{'sku':'a1','price':25},{'sku':'b2','price':25}],{'sku':'a1','price':25})])
+def test_sixteen(p1,ans):
+   assert findHighestPriced(p1) == ans
