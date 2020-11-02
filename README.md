@@ -85,6 +85,10 @@ pip3 install pysimplegui
 ```
 pip3 install pyautogui
 ```
+* PyTest (for testing your answers on python challenges)
+```
+pip3 install pytest
+```
 
 <br/>
 
@@ -116,7 +120,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<br/> -->
+<br/>
 
 <!-- ROADMAP -->
 ## Roadmap
