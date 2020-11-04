@@ -133,3 +133,57 @@ def reduceArray(x,y,z):
       t=y(t,i,n)
       n+=1
    return t
+#19
+def flatten(x):
+   ans=[]
+   def flat(a):
+      for b in a:
+         if isinstance(b,list):
+            flat(b)
+         else:
+            ans.append(b)
+   for y in x:
+      if isinstance(y,list):
+         flat(y)
+      else:
+         ans.append(y)
+   return ans
+#20
+def isPrime(x):
+   if x%1 != 0 or x == 1:
+      return False
+   elif x < 4:
+      return True
+   elif x%2 != 0 and x%3 != 0:
+      return True
+   else:
+      return False
+#21
+#def primeFactors
+#22
+def intersection(x,y):
+   a,b,ans=x,y,[]
+   for first in a:
+      num=0
+      for second in b:
+         if first == second:
+            ans.append(first)
+            b.pop(num)
+         num+=1
+   return ans
+#23
+def balancedBrackets(x):
+   i,ans,half=1,False,round((len(x)/2))
+   if len(x)%2 != 0:
+      return ans
+   for a in x:
+      b=str(a)
+      if i <= half:
+         if b == '{' and str(x[-i]) == '}':
+            ans=True
+         elif b == '[' and str(x[-i]) == ']':
+            ans=True
+         elif b == '(' and str(x[-i]) == ')':
+            ans=True
+         i+=1
+   return ans

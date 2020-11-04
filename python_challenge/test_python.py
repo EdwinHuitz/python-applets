@@ -117,6 +117,25 @@ def test_20(p1,ans):
 
 @parametrize('p1,ans',[(1,[]),(2,[2]),(3,[3]),(4,[2,2]),(18,[2,3,3]),(29,[29]),(105,[3,5,7]),(200,[2,2,2,5,5])])
 @skip('primeFactors' not in dir(ans),reason="This function has yet to be declared")
-def test_20(p1,ans):
-   assert primeFactors(p1).sort() == ans
+def test_21(p1,ans):
+   assert primeFactors(p1) == ans
 
+@parametrize('p1,p2,ans',[([1],[2],[]),(['a',1],[],[]),(['a',1],[False,'a',15],['a']),([1,'a',True,1,1],[True,1,'b',1],[1,True,1])])
+@skip('intersection' not in dir(ans),reason="This function has yet to be declared")
+def test_22(p1,p2,ans):
+   assert intersection(p1,p2) == ans
+
+@parametrize('p1,ans',[('(]',False),('[)]',False),('()',True),('[{}]',True),('[({}[])]',True)])
+@skip('balancedBrackets' not in dir(ans),reason="This function has yet to be declared")
+def test_23(p1,ans):
+   assert balancedBrackets(p1) == ans
+
+@parametrize('p1,ans',[([['ABC',65]],True),([['ABC',999]],False),([['ABC',999],['XY',89]],False),([['ABC',66],['dddd',100],['Hello',108]],True),([['dddd', 15], ['Hello', 108], ['ABC', 66]],False)])
+@skip('isWinningTicket' not in dir(ans),reason="This function has yet to be declared")
+def test_24(p1,ans):
+   assert isWinningTicket(p1) == ans
+
+@parametrize('p1,ans',[('0.0.0.1',1),('0.0.2.0',512),('192.156.99.15',3231474447),('10.0.0.1',167772161)])
+@skip('getNumForIP' not in dir(ans),reason="This function has yet to be declared")
+def test_25(p1,ans):
+   assert getNumForIP(p1) == ans
