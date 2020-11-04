@@ -70,10 +70,10 @@ def info(x):
    curChart=bars
 
 # UI display window
-window.iconbitmap('images/covid.ico')
+window.iconbitmap('images\covid.ico')
 window.title('COVID-19 World-Wide Statistics')
 window.configure(bg='black')
-stats = Label(master=top,bg='black',fg='white',font=50)
+stats = Label(master=top,bg='black',fg='white',font=50,padx=20)
 stats.pack(side='right')
 info(2)
 Button(center,text=f'{cStats[0]}{cStats[1]}',width=14,height=2,command=lambda a=f'{2}':info(2)).pack()

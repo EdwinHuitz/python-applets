@@ -57,6 +57,7 @@ This entire repo is and alway will be a work in progress, including this readme.
 
 * [Python 3.8](https://www.python.org/)
 * [Tkinter](https://docs.python.org/3/library/tkinter.html)
+* [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup)
 * [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI)
 * [PyAutoGUI](https://github.com/asweigart/pyautogui)
 
@@ -76,6 +77,10 @@ In order to use these applets you must first ensure the correct version of Pytho
 * Python 3.8
 ```sh
 sudo apt-get install python3.8
+```
+* Beautiful Soup 4
+```
+pip3 install beautifulsoup4
 ```
 * PySimpleGUI (for using the email applet's UI)
 ```
