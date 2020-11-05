@@ -557,11 +557,6 @@
 # - The isWinningTicket function should return true if all of the nested arrays have a character in the string whose numeric character code equals the integer (2nd value).
 # - If any of the nested arrays have a string where all of the character's character code does not match the integer, then return false.
 
-# Hints:
-
-# - A character/string can be created from a character code using the String.fromCharCode() class method.
-# - A character within a string's character code can be obtained using the charCodeAt() string method.
-
 # Examples:
 
 # isWinningTicket( [ ['ABC', 65] ] ) => true

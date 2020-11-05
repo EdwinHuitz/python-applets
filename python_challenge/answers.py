@@ -159,7 +159,7 @@ def isPrime(x):
    else:
       return False
 #21
-#def primeFactors
+#def primeFactors(x):
 #22
 def intersection(x,y):
    a,b,ans=x,y,[]
@@ -187,3 +187,33 @@ def balancedBrackets(x):
             ans=True
          i+=1
    return ans
+#24
+def isWinningTicket(x):
+   for i in x:
+      b,num=0,0
+      while b<len(i[0]):
+         if ord(i[0][b]) == i[1]:
+            num=1
+         b+=1
+      if num == 0:return False
+      else:return True
+#25
+def getNumForIP(x):
+   num,ans,a=1,0,x.split('.')
+   while num<len(a)+1:
+      ans+=int(a[-num])*(256**(num-1))
+      num+=1
+   return ans
+#26
+def toCamelCase(x):
+   num,lis,ans=0,x,''
+   if lis.find('-')>=1:
+      lis=lis.split('-')
+   else:
+      lis=lis.split('_')
+   for i in lis:
+      if num==0:pass
+      else:
+         lis[num]=i.replace(i[0],i[0].upper())
+      num+=1
+   return ans.join(lis)
