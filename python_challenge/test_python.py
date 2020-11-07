@@ -1,13 +1,13 @@
 import pytest
 import math
-import answers
-from answers import *
-# import challenges
-# from challenges import *
+# import answers
+# from answers import *
+import challenges
+from challenges import *
 
 parametrize = pytest.mark.parametrize
 skip = pytest.mark.skipif
-ans = answers
+ans = challenges
 re = "This function has yet to be declared"
 #! remember to change ans from answers to challenges
 @parametrize('ans',['hello'])
