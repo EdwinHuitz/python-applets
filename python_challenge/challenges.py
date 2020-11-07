@@ -105,7 +105,7 @@
 
 # - Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
 # - The first argument should be the dividend and the second argument should be the divisor.
-# - If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
+# - If a 0 is passed in as the second argument you should return python's special float value: Infinity.
 # - For extra fun, complete this challenge without using the modulus (%) operator.
 
 # Examples:
@@ -370,7 +370,7 @@
 
 # Prompt:
 
-# The goal is of this challenge is to write a function that performs the functionality of JavaScript's Array.prototype.map method.
+# The goal of this challenge is to write a function that mimics the functionality of JavaScript's Array.prototype.map method.
 
 # - Write a function named mapArray that accepts two arguments: a single array and a callback function.
 # - The mapArray function should return a new array of the same length as the array argument.
@@ -397,7 +397,7 @@
 
 # Prompt:
 
-# The goal is of this challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
+# The goal is of this challenge is to write a function that mimics the functionality of JavaScript's Array.prototype.reduce method.
 
 # - Write a function named reduceArray that accepts three arguments: (1) an array; (2) a callback function; and (3) a value used as the initial value of the "accumulator".
 # - The reduceArray function should return whatever is returned by the callback function on the last iteration.
@@ -637,7 +637,7 @@
 
 # - We typically work with "decimal" numbers on a daily basis. Decimal is "base 10", where there are 10 digits available - 0 thru 9.  However, it's binary that computers understand - 1's and 0's.  The 1's and 0's are called bits.
 # - As an example, the decimal value of 13 is represented in binary as 1101.  There are 3 one bits and 1 zero bit in the decimal number of 13.
-# - Carefully read the documentation for the Number.prototype.toString method.
+# - Carefully read the documentation for the bin method.
 
 # Examples:
 
@@ -658,14 +658,14 @@
 
 # Prompt:
 
-# - This challenge uses an imaginary grid where the x coordinate increases when you move 'up' and decreases when you move 'down'.  Similarly, the y coordinate increases when you move 'right' and decreases when you move 'left'.
+# - This challenge uses an imaginary grid where the y coordinate increases when you move 'up' and decreases when you move 'down'.  Similarly, the x coordinate increases when you move 'right' and decreases when you move 'left'.
 # - Write a function called gridTrip that accepts two arguments.
-# - The first argument is an array containing two integers.  The first represents the starting x position on the grid.  The second integer in the array represents the starting y position.
+# - The first argument is an array containing two integers.  The first represents the starting y position on the grid.  The second integer in the array represents the starting x position.
 # - The second argument is a string representing "moves" using the characters 'U', 'D', 'R' & 'L' to represent moving Up, Down, Right & Left respectively.  Each direction character will be followed by digits representing how many units to move in that direction.  For example, a string of 'D15R2U4' represents moving up 15 units, to the right 2 units, and finally, down 4 units.  The direction characters will always be upper case.
 # - The gridTrip function should return a new array of two integers: the final x position and the final y position.  Do not modify the array argument).
 
 # Hint:
-# - Using the String.match method to return an array of regular expression matches can be helpful if you want to break the single string of moves into an array of distinct moves by direction.  Be sure to use the global flag, e.g. /cat/g, when defining the regexp.
+# - Using the regex library to return an array of regular expression matches can be helpful if you want to break the single string of moves into an array of distinct moves by direction.
 
 # Examples:
 

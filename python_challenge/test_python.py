@@ -141,7 +141,7 @@ def test_24(p1,ans):
 def test_25(p1,ans):
    assert getNumForIP(p1) == ans
 
-@parametrize('p1,ans',[('wdi-rocks','wdiRocks'),('banana_Turkey_potato','bananaTurkeyPotato'),('Mama-mia','MamaMia'),('a_b_c','ABC')])
+@parametrize('p1,ans',[('wdi-rocks','wdiRocks'),('banana_Turkey_potato','bananaTurkeyPotato'),('Mama-mia','MamaMia'),('A_b_c','ABC')])
 @skip('toCamelCase' not in dir(ans),reason=re)
 def test_26(p1,ans):
    assert toCamelCase(p1) == ans
@@ -151,7 +151,7 @@ def test_26(p1,ans):
 def test_27(p1,ans):
    assert countTheBits(p1) == ans
 
-@parametrize('p1,p2,ans',[([0,0],'U1',True),([0,0],'U2R1',[2,1]),([5,10],'D5L15U2',[2,-5]),([-22,100],'L2L15D50U1D9',[-80,83])])
+@parametrize('p1,p2,ans',[([0,0],'U2R1',[2,1]),([5,10],'D5L15U2',[2,-5]),([-22,100],'L2L15D50U1D9',[-80,83])])
 @skip('gridTrip' not in dir(ans),reason=re)
 def test_28(p1,p2,ans):
    assert gridTrip(p1,p2) == ans
