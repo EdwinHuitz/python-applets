@@ -159,7 +159,19 @@ def isPrime(x):
    else:
       return False
 #21
-#def primeFactors(x):
+def primeFactors(x):
+   primes,ans=[2,3,5,7],[]
+   if x <=1 or x%1!=0:
+      return []
+   if x%2!=0 and x%3!=0 and x%5!=0 and x%7!=0:
+      return [x]
+   for i in primes:
+      temp=x/i
+      while temp%1==0:
+         ans.append(i)
+         temp=temp/i
+   return ans
+   
 #22
 def intersection(x,y):
    a,b,ans=x,y,[]
@@ -217,3 +229,45 @@ def toCamelCase(x):
          lis[num]=i.replace(i[0],i[0].upper())
       num+=1
    return ans.join(lis)
+#27
+def countTheBits(x):
+   binary,ans=bin(x).replace('0b',''),0
+   for i in binary:
+      ans+=int(i)
+   return ans
+#28
+def gridTrip(x,y):
+   import re
+   dic,coords=x,y
+   lis=re.findall("[A-Z][0-9]+",coords)
+   for l in lis:
+      if l[0] == 'U': dic[0]+=int(l[1:])
+      elif l[0] == 'D': dic[0]-=int(l[1:])
+      elif l[0] == 'L': dic[1]-=int(l[1:])
+      elif l[0] == 'R': dic[1]+=int(l[1:])
+   return(dic)
+#29
+def addChecker(x,y):
+   for a in x:
+      for b in x:
+         if a!=b and a+b == y:
+            return True
+   return False
+#30
+def totalTaskTime(x,y):
+   i,ints,nums=0,x[0:y],[]
+   ints.sort()
+   ints=ints+x[y:]
+   while i<y:
+      nums.append(0)
+      i+=1
+   i=0
+   for n in ints:
+      if i<y:
+         nums[i]+=n
+         i+=1
+      else:
+         nums[0]+=n
+         i=1
+   nums.sort(reverse=True)
+   return(nums[0])
