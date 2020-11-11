@@ -1,3 +1,7 @@
+'''
+   add a way to stop infinite user loops
+   add save and load functions
+'''
 import tkinter as tk,sys
 from tkinter.scrolledtext import ScrolledText
 from tkinter.font import Font
@@ -8,6 +12,8 @@ def outputting():
    userCodeInput=txtinput.get('1.0','end')
    try:
       exec(userCodeInput)
+   except KeyboardInterrupt:
+      return
    except Exception as e:
       print(e)
    txtoutput.delete('1.0','end')
